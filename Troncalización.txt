@@ -1,0 +1,31 @@
+enable
+configure terminal
+vlan 2 
+name Docente
+vlan 3 
+name Estudiante
+interface range fa0/1-10
+switchport mode access 
+switchport access vlan 2
+interface range fa0/11-20
+switchport mode access
+switchport access vlan 3
+interface range fa0/23-24
+switchport mode trunk 
+switchport trunk allowed vlan 2,3
+
+enable
+configure terminal
+vlan 2 
+name Docente
+vlan 3 
+name Estudiante
+interface range fa0/1-10
+switchport mode access 
+switchport access vlan 2
+interface range fa0/11-20
+switchport mode access
+switchport access vlan 3
+interface fa0/22
+switchport mode trunk 
+switchport trunk allowed vlan 2,3
